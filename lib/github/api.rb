@@ -15,7 +15,7 @@ module Github
     HOST_FILE_NAME = 'host'.freeze
 
     def search_repos(query)
-      path = "/search/repositories?q=#{escape(query)}"
+      path = "/search/repositories?q=#{escape(query)}+is:private"
 
       get(path)[:items]
     end
